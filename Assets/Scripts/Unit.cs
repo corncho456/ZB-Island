@@ -13,19 +13,9 @@ public class Unit : MonoBehaviour,IDamageable
     public int hpConst;
     public int hpBase;
 
-    public int defConst;
-    public int defBase;
 
-    public int atkConst;
-    public int atkBase;
-
-    public float Atk { get { return atkBase + atkConst * level; } }
-    public float Def { get { return defBase + defConst * level; } }
     public float HP { get { return hpBase + hpConst * level; } }
 
-
-    private float atk;
-    private float def;
     private float hp;
     public bool isDead = false;
 
@@ -37,6 +27,11 @@ public class Unit : MonoBehaviour,IDamageable
     public void OnDamaged(float damage)
     {
         hp -= damage;
+        if (hp < 0)
+        {
+            Dead();
+        }
+        
     }
 
     // Start is called before the first frame update
@@ -45,12 +40,4 @@ public class Unit : MonoBehaviour,IDamageable
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(hp < 0f)
-        {
-            Dead();
-        }
-    }
 }

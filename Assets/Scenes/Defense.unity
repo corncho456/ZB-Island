@@ -349,6 +349,9 @@ MonoBehaviour:
   maxDistance: 50
   target: {fileID: 1848057209}
   range: 1
+  isFire: 0
+  cam: {fileID: 1546821920}
+  atarget: {fileID: 0}
 --- !u!1 &88980703 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1484965352408356, guid: 4c607c68ae6b1ba469147aa839864a91, type: 3}
@@ -689,8 +692,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 1}
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Size: {x: 2.270301, y: 2.7056305, z: 1.3266318}
+  m_Center: {x: 0.07114208, y: 1.3528153, z: 0.16331595}
 --- !u!54 &154657089
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -715,7 +718,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 154657087}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -10, y: 0.058, z: 5}
+  m_LocalPosition: {x: -6.07, y: 0.058, z: 8.967}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 423512858}
@@ -739,10 +742,6 @@ MonoBehaviour:
   level: 1
   hpConst: 50
   hpBase: 100
-  defConst: 1
-  defBase: 0
-  atkConst: 5
-  atkBase: 10
   isDead: 0
 --- !u!1001 &157454544
 PrefabInstance:
@@ -5352,7 +5351,7 @@ PrefabInstance:
     - target: {fileID: 95823215125766364, guid: 20d863b9f1bb8464f96d58e9319f7088, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: db729ae0a8019854c91c67d55d934e46, type: 2}
+      objectReference: {fileID: 9100000, guid: 6133a92fb4031d144b2ba6c427726119, type: 2}
     - target: {fileID: 95823215125766364, guid: 20d863b9f1bb8464f96d58e9319f7088, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
@@ -5938,6 +5937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireHandle: {fileID: 1824599002}
+  aim: {fileID: 81767992}
 --- !u!114 &1405452749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7001,7 +7001,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1626751146}
   m_Layer: 0
-  m_Name: Aim
+  m_Name: AimLimit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

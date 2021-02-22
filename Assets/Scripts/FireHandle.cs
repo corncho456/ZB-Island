@@ -26,12 +26,14 @@ public class FireHandle : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public void OnPointerEnter(PointerEventData eventData)
     {
         fireArea.gameObject.SetActive(true);
+
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
 
         fireArea.gameObject.SetActive(false);
+
     }
 
 

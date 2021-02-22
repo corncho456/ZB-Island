@@ -8,6 +8,9 @@ public class Aim : MonoBehaviour
     public float maxDistance;
     public Transform target;
     public float range;
+    public bool isFire;
+    public Camera cam;
+    public Unit atarget;
 
     private void OnDrawGizmos()
     {
@@ -19,17 +22,24 @@ public class Aim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 dir = (target.position - transform.position).normalized;
-
-
-        if (Physics.SphereCast(transform.position, range, dir, out hit, maxDistance))
+        if (isFire)
         {
-            if(hit.collider.GetComponent<IDamageable>() != null)
+            Shoot();
+        }
+    }
+
+    public void Shoot()
+    {
+
+
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range))
+        {
+            Debug.Log(hit.transform.name);
+            if (atarget != null)
             {
-                hit.collider.GetComponent<IDamageable>().OnDamaged(10);
-                print("damaged!");
+                Debug.Log(hit.transform.name);
+                atarget.OnDamaged(10f);
             }
-            
         }
     }
 }
